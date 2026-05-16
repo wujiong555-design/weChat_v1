@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊天</title>
+  <link rel="stylesheet" href="cute.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="message.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="my.html">我的页面</a>
+    <a href="sh.html">好友搜索</a>
+    <a href="friends.html">好友列表</a>
+    <a href="login.html">登录</a>
+  </nav>
+
+  <h1>聊天页面</h1>
+  <h2>聊天记录</h2>
+  <div id="history"></div>
+
+  <section class="chat-composer">
+    <label for="content">发送消息</label>
+    <input type="text" name="message" id="content" placeholder="输入消息后按 Enter">
+    <input type="button" value="发送" id="send">
+  </section>
+</body>
+</html>

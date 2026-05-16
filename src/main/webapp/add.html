@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注册</title>
+  <link rel="stylesheet" href="cute.css">
+</head>
+<body>
+  <h1>用户注册</h1>
+
+  <form action="/weChat_v1/Add" method="post">
+    <label for="email">邮箱地址</label>
+    <input type="email" name="email" id="email" placeholder="name@example.com">
+
+    <label for="password">密码</label>
+    <input type="password" name="password" id="password" placeholder="请输入密码">
+
+    <label for="password_confirm">确认密码</label>
+    <input type="password" name="password_confirm" id="password_confirm" placeholder="再输入一次密码">
+
+    <input type="submit" value="注册" id="register">
+  </form>
+</body>
+</html>

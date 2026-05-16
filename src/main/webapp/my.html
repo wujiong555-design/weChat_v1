@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的页面</title>
+  <link rel="stylesheet" href="cute.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="my.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="my.html">我的页面</a>
+    <a href="sh.html">好友搜索</a>
+    <a href="friends.html">好友列表</a>
+    <a href="login.html">登录</a>
+    <a href="friendgroup.html">发布朋友圈</a>
+  </nav>
+
+  <h1>我的页面</h1>
+
+  <section class="panel">
+    <label for="email">邮箱地址</label>
+    <input type="email" name="new_email" id="email">
+
+    <label for="password">密码</label>
+    <input type="password" name="new_password" id="password">
+
+    <input type="button" value="保存" id="save" onclick="save()">
+  </section>
+
+  <span id="res"></span>
+</body>
+</html>

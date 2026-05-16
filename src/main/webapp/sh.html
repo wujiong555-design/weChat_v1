@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好友搜索</title>
+  <link rel="stylesheet" href="cute.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="sh.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="my.html">我的页面</a>
+    <a href="sh.html">好友搜索</a>
+    <a href="friends.html">好友列表</a>
+    <a href="login.html">登录</a>
+  </nav>
+
+  <h1>好友搜索</h1>
+
+  <section class="panel">
+    <label for="email">邮箱地址</label>
+    <input type="email" name="email" id="email" placeholder="输入好友邮箱">
+    <input type="button" value="搜索" id="sh">
+  </section>
+
+  <h2>搜索结果</h2>
+  <span id="res"></span>
+</body>
+</html>
