@@ -32,7 +32,7 @@ body {
 body::before {
   content: "WeChat";
   display: block;
-  max-width: 761px;
+  max-width: 760px;
   margin: 0 auto 14px;
   color: var(--pink);
   font-size: 28px;
