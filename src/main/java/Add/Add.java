@@ -2,8 +2,6 @@ package Add;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import jakarta.servlet.ServletException;
@@ -11,6 +9,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+import com.util.DBUtil;
+
+
 
 /**
  * Servlet implementation class Add
@@ -52,15 +54,16 @@ public class Add extends HttpServlet {
 			
 			System.out.println(email+"|"+password+"|"+password_confirm);
 			
-			String url="jdbc:mysql://localhost/wechat_v1";
-			String user="root";
-			String passwordConnect="123456";
-			
+//			String url="jdbc:mysql://localhost/wechat_v1";
+//			String user="root";
+//			String passwordConnect="123456";
+//			
 			 
 					try {
-						Class.forName("com.mysql.cj.jdbc.Driver");
-						
-						Connection conn = DriverManager.getConnection(url,user,passwordConnect);
+//						Class.forName("com.mysql.cj.jdbc.Driver");
+//						
+//						Connection conn = DriverManager.getConnection(url,user,passwordConnect);
+						Connection conn=DBUtil.getConnection();
 						
 						String sql="INSERT INTO `user_v1` (`email`, `PASSWORD`, `NAME`, `birthday`, `gender`, `STATUS`, `updateTime`) VALUES"
 								+ "('"+email+"', '"+password+"',NULL,NULL,NULL,NULL,CURRENT_TIMESTAMP())";
@@ -69,14 +72,9 @@ public class Add extends HttpServlet {
 						
 						conn.close();
 						msg="ユーザー登録しました"+"<a href='login.html'>ログインへ戻る</a>";
-					} catch (ClassNotFoundException e) {
+					}catch (Exception e) {
 						// TODO 自動生成された catch ブロック
 						e.printStackTrace();
-						msg="データベースのアクセスできない";
-					} catch (SQLException e) {
-						// TODO 自動生成された catch ブロック
-						e.printStackTrace();
-						msg="データベースのアクセスできない";
 					}
 		
 		}

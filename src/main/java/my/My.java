@@ -2,9 +2,7 @@ package my;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import jakarta.servlet.ServletException;
@@ -13,6 +11,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
+import com.util.DBUtil;
 
 /**
  * Servlet implementation class My
@@ -60,9 +60,10 @@ public class My extends HttpServlet {
 		String msg = "";
 
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-
-			Connection conn = DriverManager.getConnection(url, user, passwordConnect);
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//
+//			Connection conn = DriverManager.getConnection(url, user, passwordConnect);
+			Connection conn=DBUtil.getConnection();
 
 			String sql = "SELECT `email`,`password` FROM `user_v1` WHERE email='" + email + "'";
 
@@ -91,14 +92,9 @@ public class My extends HttpServlet {
 			
 			
 
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
-			msg = "データベースのアクセスできない";
-		} catch (SQLException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-			msg = "データベースのアクセスできない";
 		}
 
 		response.getWriter().append(msg);
